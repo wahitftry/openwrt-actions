@@ -10,11 +10,17 @@
 # See /LICENSE for more information.
 #
 
-# Modify default IP
-#sed -i 's/192.168.1.1/192.168.50.5/g' package/base-files/files/bin/config_generate
+# 1. Mengubah IP Default Router
+# Diubah ke 192.168.31.1 (IP default bawaan pabrik Xiaomi) agar aman 
+# dan tidak bentrok dengan IP modem ISP (yang biasanya 192.168.1.1)
+sed -i 's/192.168.1.1/192.168.31.1/g' package/base-files/files/bin/config_generate
 
-# Modify default theme
-#sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
+# 2. Mengubah Nama Hostname Router
+# Mengubah "OpenWrt" menjadi "Redmi-AC2100" agar terlihat profesional
+# dan mudah dikenali saat dipindai di jaringan Wi-Fi/LAN
+sed -i 's/OpenWrt/Redmi-AC2100/g' package/base-files/files/bin/config_generate
 
-# Modify hostname
-#sed -i 's/OpenWrt/P3TERX-Router/g' package/base-files/files/bin/config_generate
+# 3. Mengubah Tema Default ke Argon
+# Tema bawaan (bootstrap) terlihat usang. Kita paksa Argon menjadi tema
+# default sejak pertama kali router menyala.
+sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
