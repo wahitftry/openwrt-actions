@@ -20,7 +20,5 @@ sed -i 's/192.168.1.1/192.168.31.1/g' package/base-files/files/bin/config_genera
 # dan mudah dikenali saat dipindai di jaringan Wi-Fi/LAN
 sed -i 's/OpenWrt/Redmi-AC2100/g' package/base-files/files/bin/config_generate
 
-# 3. Mengubah Tema Default ke Argon
-# Tema bawaan (bootstrap) terlihat usang. Kita paksa Argon menjadi tema
-# default sejak pertama kali router menyala.
-sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
+# 3. Mengubah Tema Default ke Argon (DIMATIKAN)
+# sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
